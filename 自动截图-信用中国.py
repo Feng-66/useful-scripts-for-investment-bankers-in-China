@@ -42,32 +42,6 @@ def creditCH(fullname):#静态网页但是抓不到
                 else:
                     break
             a += 1
-    # 无法适应查询结果为多页的旧方法：
-    # for i in range(len(coLinks)):  #每个按钮点一遍，从而打开每个搜索结果；每个搜索结果中点‘下载信用报告’调至详情页
-    #     coLinks[i].click()
-    # now_handle = driver.current_window_handle
-    # all_handles = driver.window_handles
-    # a=1
-    # for handle in all_handles:
-    #     if handle != now_handle:
-    #         driver.switch_to.window(handle)
-    #         button=driver.find_element_by_class_name('add-ons-btn1')
-    #         button.click()
-    #         #★★★★★滚动界面至底部以截图；OR 选择点击下载按钮，但需设置浏览器的属性确保不弹窗和路径
-    #         height = driver.execute_script("return document.body.clientHeight")
-    #         k=1
-    #         while True:
-    #             if k * 500 < height:
-    #                 driver.save_screenshot(".\\信用中国_查询结果\\%s_%d(%d).png" % (fullname, a, k))
-    #                 # Edge无法截长图...
-    #                 js_move = "window.scrollTo(0,{})".format(k * 500)
-    #                 driver.execute_script(js_move)
-    #                 time.sleep(5)
-    #                 height = driver.execute_script("return document.body.clientHeight")
-    #                 k += 1
-    #             else:
-    #                 break
-    #         a+=1
     print(fullname + ' 信用中国截图保存完毕，合计' + str(a - 1) + '份')
     driver.quit()
 
